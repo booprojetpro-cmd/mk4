@@ -1,0 +1,2302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b3d2e" />
+  <meta name="description" content="Cours de tennis individuels à Nîmes : analyse technique, programme personnalisé et réservation de créneau en ligne. 60 € l'heure, paiement sur place." />
+  <title>Cours de tennis à Nîmes — Coaching individuel</title>
+
+  <style>
+    :root {
+      --green-950: #07251c;
+      --green-900: #0b3528;
+      --green-800: #0f4a36;
+      --green-700: #176244;
+      --green-600: #238357;
+      --green-500: #43a968;
+      --lime: #a6ee28;
+      --lime-soft: #d9ff9c;
+      --cream: #f6f7f2;
+      --paper: #ffffff;
+      --ink: #102019;
+      --muted: #627067;
+      --line: rgba(15, 74, 54, .13);
+      --shadow-sm: 0 12px 35px rgba(7, 37, 28, .08);
+      --shadow-lg: 0 28px 80px rgba(7, 37, 28, .16);
+      --radius-sm: 16px;
+      --radius-md: 24px;
+      --radius-lg: 34px;
+      --container: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cream);
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 3%, rgba(166, 238, 40, .10), transparent 28rem),
+        linear-gradient(180deg, #fbfcf9 0%, var(--cream) 100%);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    button { color: inherit; }
+
+    ::selection {
+      color: white;
+      background: var(--green-700);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 15px;
+      color: var(--green-700);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--lime);
+      box-shadow: 0 0 0 4px rgba(166, 238, 40, .13);
+    }
+
+    .section-title {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2.1rem, 4.7vw, 4.2rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+      text-wrap: balance;
+    }
+
+    .section-subtitle {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.6vw, 1.18rem);
+      line-height: 1.72;
+    }
+
+    .btn {
+      min-height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+
+    .btn-primary {
+      color: var(--green-950);
+      background: var(--lime);
+      box-shadow: 0 14px 32px rgba(129, 199, 22, .24);
+    }
+
+    .btn-primary:hover {
+      background: #b8f64d;
+      box-shadow: 0 17px 38px rgba(129, 199, 22, .32);
+    }
+
+    .btn-dark {
+      color: white;
+      background: var(--green-900);
+      box-shadow: 0 15px 35px rgba(7, 37, 28, .18);
+    }
+
+    .btn-dark:hover { background: var(--green-800); }
+
+    .btn-ghost {
+      color: var(--green-900);
+      border-color: var(--line);
+      background: rgba(255, 255, 255, .64);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-ghost:hover { border-color: rgba(15, 74, 54, .3); }
+
+    .icon-arrow {
+      width: 18px;
+      height: 18px;
+      transition: transform .25s ease;
+    }
+
+    .btn:hover .icon-arrow { transform: translateX(3px); }
+
+    /* Navigation */
+    .site-header {
+      position: fixed;
+      z-index: 100;
+      top: 14px;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+
+    .navbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 26px;
+      padding: 9px 10px 9px 16px;
+      border: 1px solid rgba(255, 255, 255, .64);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .78);
+      box-shadow: 0 15px 50px rgba(7, 37, 28, .10);
+      backdrop-filter: blur(18px) saturate(140%);
+      pointer-events: auto;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .brand-copy {
+      display: grid;
+      line-height: 1;
+    }
+
+    .brand-copy strong {
+      color: var(--green-900);
+      font-size: .92rem;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .brand-copy span {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .69rem;
+      font-weight: 650;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+    }
+
+    .nav-links a {
+      padding: 10px 13px;
+      border-radius: 999px;
+      color: #33463b;
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green-800);
+      background: rgba(15, 74, 54, .07);
+    }
+
+    .nav-cta {
+      min-height: 49px;
+      padding-inline: 18px;
+      font-size: .88rem;
+    }
+
+    .menu-toggle {
+      width: 48px;
+      height: 48px;
+      display: none;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      background: var(--green-900);
+      cursor: pointer;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content: "";
+      width: 19px;
+      height: 2px;
+      position: absolute;
+      border-radius: 999px;
+      background: white;
+      transition: .25s ease;
+    }
+
+    .menu-toggle::before { transform: translateY(-6px); }
+    .menu-toggle::after { transform: translateY(6px); }
+    .menu-toggle.is-active span { opacity: 0; }
+    .menu-toggle.is-active::before { transform: rotate(45deg); }
+    .menu-toggle.is-active::after { transform: rotate(-45deg); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      align-items: end;
+      padding: 108px 0 34px;
+    }
+
+    .hero-shell {
+      min-height: min(790px, calc(100svh - 130px));
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(470px, 1.08fr);
+      align-items: stretch;
+      overflow: hidden;
+      border-radius: 40px;
+      color: white;
+      background: var(--green-950);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(90deg, rgba(7, 37, 28, 1) 0%, rgba(7, 37, 28, .94) 39%, rgba(7, 37, 28, .16) 66%, rgba(7, 37, 28, .03) 100%),
+        linear-gradient(0deg, rgba(7, 37, 28, .32), transparent 50%);
+    }
+
+    .hero-shell::after {
+      content: "";
+      width: 520px;
+      height: 520px;
+      position: absolute;
+      z-index: 3;
+      left: -210px;
+      bottom: -280px;
+      border: 1px solid rgba(166, 238, 40, .18);
+      border-radius: 50%;
+      box-shadow: 0 0 0 80px rgba(166, 238, 40, .025), 0 0 0 160px rgba(166, 238, 40, .018);
+      pointer-events: none;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      object-position: 60% center;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 4;
+      align-self: center;
+      padding: clamp(42px, 5vw, 76px);
+    }
+
+    .hero-kicker {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, .84);
+      background: rgba(255, 255, 255, .07);
+      backdrop-filter: blur(8px);
+      font-size: .78rem;
+      font-weight: 750;
+    }
+
+    .hero-kicker i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 0 6px rgba(166, 238, 40, .12);
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(3rem, 6.5vw, 6.5rem);
+      line-height: .89;
+      letter-spacing: -.068em;
+      text-wrap: balance;
+    }
+
+    .hero h1 span {
+      color: var(--lime);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -.05em;
+    }
+
+    .hero-lead {
+      max-width: 580px;
+      margin: 25px 0 0;
+      color: rgba(255, 255, 255, .74);
+      font-size: clamp(1rem, 1.6vw, 1.16rem);
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 31px;
+    }
+
+    .hero .btn-ghost {
+      color: white;
+      border-color: rgba(255, 255, 255, .17);
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 34px;
+      color: rgba(255, 255, 255, .73);
+      font-size: .84rem;
+      font-weight: 650;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-meta svg { color: var(--lime); }
+
+    .price-badge {
+      width: 136px;
+      height: 136px;
+      position: absolute;
+      z-index: 5;
+      right: 34px;
+      bottom: 30px;
+      display: grid;
+      place-content: center;
+      border: 1px solid rgba(255, 255, 255, .35);
+      border-radius: 50%;
+      color: var(--green-950);
+      background: var(--lime);
+      box-shadow: 0 18px 50px rgba(7, 37, 28, .28);
+      text-align: center;
+      transform: rotate(5deg);
+    }
+
+    .price-badge strong {
+      font-size: 2.35rem;
+      line-height: .85;
+      letter-spacing: -.06em;
+    }
+
+    .price-badge small {
+      margin-top: 8px;
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      z-index: 5;
+      right: 49%;
+      bottom: 21px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, .53);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+    }
+
+    .hero-scroll::after {
+      content: "";
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(var(--lime), transparent);
+      animation: scrollPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: .35; transform: scaleY(.72); }
+      50% { opacity: 1; transform: scaleY(1); }
+    }
+
+    /* Trust strip */
+    .trust-strip {
+      padding: 21px 0 0;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .trust-item {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 17px 18px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .75);
+      box-shadow: 0 8px 30px rgba(7, 37, 28, .035);
+    }
+
+    .trust-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      color: var(--green-700);
+      background: rgba(166, 238, 40, .18);
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: .94rem;
+    }
+
+    .trust-item span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: .76rem;
+      line-height: 1.35;
+    }
+
+    /* Video */
+    .video-section { padding: 130px 0; }
+
+    .video-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .video-note {
+      max-width: 270px;
+      color: var(--muted);
+      font-size: .87rem;
+      line-height: 1.55;
+    }
+
+    .video-card {
+      position: relative;
+      overflow: hidden;
+      padding: 11px;
+      border: 1px solid rgba(15, 74, 54, .11);
+      border-radius: 34px;
+      background: white;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 25px;
+      object-fit: cover;
+      background: var(--green-950);
+    }
+
+    .video-tag {
+      position: absolute;
+      z-index: 2;
+      top: 29px;
+      left: 29px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 999px;
+      color: white;
+      background: rgba(7, 37, 28, .72);
+      backdrop-filter: blur(10px);
+      font-size: .76rem;
+      font-weight: 750;
+    }
+
+    .video-tag i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--lime);
+    }
+
+    /* Method */
+    .method-section {
+      padding: 125px 0;
+      color: white;
+      background: var(--green-950);
+      border-radius: 42px;
+    }
+
+    .method-section .eyebrow { color: var(--lime-soft); }
+    .method-section .section-subtitle { color: rgba(255, 255, 255, .62); }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 54px;
+    }
+
+    .method-card {
+      min-height: 330px;
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      border-radius: 27px;
+      background:
+        linear-gradient(160deg, rgba(255, 255, 255, .08), rgba(255, 255, 255, .025));
+      transition: transform .3s ease, border-color .3s ease, background .3s ease;
+    }
+
+    .method-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(166, 238, 40, .35);
+      background: linear-gradient(160deg, rgba(255, 255, 255, .11), rgba(255, 255, 255, .035));
+    }
+
+    .method-number {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: rgba(255, 255, 255, .4);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .method-number span:last-child {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green-950);
+      background: var(--lime);
+      font-size: .9rem;
+      letter-spacing: 0;
+    }
+
+    .method-card h3 {
+      margin: 74px 0 13px;
+      font-size: 1.55rem;
+      letter-spacing: -.035em;
+    }
+
+    .method-card p {
+      margin: 0;
+      color: rgba(255, 255, 255, .6);
+      line-height: 1.66;
+    }
+
+    .method-orbit {
+      width: 180px;
+      height: 180px;
+      position: absolute;
+      right: -75px;
+      bottom: -78px;
+      border: 1px solid rgba(166, 238, 40, .23);
+      border-radius: 50%;
+      box-shadow: 0 0 0 31px rgba(166, 238, 40, .025), 0 0 0 62px rgba(166, 238, 40, .018);
+    }
+
+    /* Analysis */
+    .analysis-section { padding: 140px 0; }
+
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: clamp(45px, 7vw, 100px);
+    }
+
+    .analysis-visual { position: relative; }
+
+    .analysis-photo {
+      width: 100%;
+      min-height: 620px;
+      object-fit: cover;
+      border-radius: 34px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .analysis-floating {
+      width: min(280px, 50%);
+      position: absolute;
+      right: -25px;
+      bottom: 36px;
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, .7);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, .90);
+      box-shadow: var(--shadow-lg);
+      backdrop-filter: blur(15px);
+    }
+
+    .analysis-floating strong {
+      display: block;
+      color: var(--green-900);
+      font-size: 1.06rem;
+    }
+
+    .analysis-floating p {
+      margin: 7px 0 16px;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.55;
+    }
+
+    .progress {
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e7ece8;
+    }
+
+    .progress span {
+      width: 78%;
+      height: 100%;
+      display: block;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--green-700), var(--lime));
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 35px;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 45px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .feature-item:last-child { border-bottom: 0; }
+
+    .feature-icon {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--green-700);
+      background: rgba(166, 238, 40, .17);
+    }
+
+    .feature-item strong {
+      display: block;
+      font-size: .99rem;
+    }
+
+    .feature-item p {
+      margin: 5px 0 0;
+      color: var(--muted);
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+
+    /* Offer */
+    .offer-section { padding: 0 0 140px; }
+
+    .offer-card {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 36px;
+      background: white;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .offer-copy { padding: clamp(38px, 6vw, 72px); }
+
+    .offer-copy h2 {
+      max-width: 690px;
+      margin: 0;
+      font-size: clamp(2.3rem, 5vw, 4.5rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+
+    .offer-copy > p {
+      max-width: 630px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .offer-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 33px;
+    }
+
+    .offer-point {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #33463b;
+      font-size: .89rem;
+      font-weight: 720;
+    }
+
+    .offer-point svg { color: var(--green-600); }
+
+    .offer-price {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(38px, 5vw, 64px);
+      color: white;
+      background: var(--green-900);
+    }
+
+    .offer-price::before {
+      content: "";
+      width: 280px;
+      height: 280px;
+      position: absolute;
+      top: -150px;
+      right: -100px;
+      border: 1px solid rgba(166, 238, 40, .22);
+      border-radius: 50%;
+      box-shadow: 0 0 0 40px rgba(166, 238, 40, .03), 0 0 0 80px rgba(166, 238, 40, .02);
+    }
+
+    .offer-price-label {
+      color: rgba(255, 255, 255, .58);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .offer-amount {
+      margin-top: 35px;
+      font-size: clamp(4.4rem, 8vw, 7rem);
+      font-weight: 850;
+      line-height: .85;
+      letter-spacing: -.075em;
+    }
+
+    .offer-amount span {
+      font-size: 1.1rem;
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+
+    .offer-payment-note {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .67);
+      line-height: 1.55;
+    }
+
+    .payment-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 34px;
+    }
+
+    .payment-logo {
+      height: 38px;
+      min-width: 65px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0 12px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .10);
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+
+    .mastercard {
+      position: relative;
+      min-width: 69px;
+      font-size: 0;
+    }
+
+    .mastercard::before,
+    .mastercard::after {
+      content: "";
+      width: 21px;
+      height: 21px;
+      position: absolute;
+      top: 8px;
+      border-radius: 50%;
+    }
+
+    .mastercard::before { left: 19px; background: #ff5f00; }
+    .mastercard::after { right: 19px; background: rgba(235, 0, 27, .88); mix-blend-mode: screen; }
+
+    /* Booking */
+    .booking-section {
+      position: relative;
+      padding: 130px 0;
+      background: #eef2ec;
+      border-radius: 42px 42px 0 0;
+    }
+
+    .booking-section::before {
+      content: "";
+      width: 550px;
+      height: 550px;
+      position: absolute;
+      left: -260px;
+      top: -120px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(166, 238, 40, .21), transparent 68%);
+      pointer-events: none;
+    }
+
+    .booking-head {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 38px;
+      margin-bottom: 44px;
+    }
+
+    .booking-assurance {
+      max-width: 260px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.5;
+    }
+
+    .booking-assurance svg {
+      flex: 0 0 auto;
+      color: var(--green-600);
+    }
+
+    .booking-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(330px, .8fr);
+      gap: 18px;
+    }
+
+    .booking-panel,
+    .summary-panel {
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .booking-panel { padding: clamp(24px, 4vw, 40px); }
+
+    .booking-step + .booking-step {
+      margin-top: 35px;
+      padding-top: 32px;
+      border-top: 1px solid var(--line);
+    }
+
+    .step-title {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 0 0 18px;
+      font-size: 1rem;
+    }
+
+    .step-title span {
+      width: 29px;
+      height: 29px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green-950);
+      background: var(--lime);
+      font-size: .76rem;
+      font-weight: 900;
+    }
+
+    .date-scroller {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(88px, 1fr);
+      gap: 9px;
+      overflow-x: auto;
+      padding: 2px 1px 8px;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(15, 74, 54, .25) transparent;
+    }
+
+    .date-button {
+      min-height: 94px;
+      display: grid;
+      place-content: center;
+      gap: 4px;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      color: var(--ink);
+      background: #fbfcfa;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .date-button:hover {
+      border-color: rgba(15, 74, 54, .3);
+      transform: translateY(-2px);
+    }
+
+    .date-button.is-selected {
+      color: white;
+      border-color: var(--green-800);
+      background: var(--green-800);
+      box-shadow: 0 11px 25px rgba(15, 74, 54, .18);
+    }
+
+    .date-button small {
+      font-size: .67rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      opacity: .67;
+    }
+
+    .date-button strong {
+      font-size: 1.55rem;
+      line-height: 1;
+    }
+
+    .date-button em {
+      font-size: .71rem;
+      font-style: normal;
+      font-weight: 700;
+      opacity: .78;
+    }
+
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .slot-button {
+      min-height: 49px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: white;
+      font-size: .86rem;
+      font-weight: 760;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .slot-button:hover:not(:disabled) {
+      border-color: var(--green-600);
+      color: var(--green-700);
+      transform: translateY(-2px);
+    }
+
+    .slot-button.is-selected {
+      color: var(--green-950);
+      border-color: var(--lime);
+      background: var(--lime);
+      box-shadow: 0 9px 22px rgba(166, 238, 40, .24);
+    }
+
+    .slot-button:disabled {
+      color: #9aa49d;
+      text-decoration: line-through;
+      background: #f3f5f2;
+      cursor: not-allowed;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 13px;
+    }
+
+    .field { display: grid; gap: 8px; }
+    .field.full { grid-column: 1 / -1; }
+
+    .field label {
+      color: #3e5145;
+      font-size: .77rem;
+      font-weight: 780;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 51px;
+      padding: 13px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      outline: none;
+      color: var(--ink);
+      background: #fbfcfa;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .field textarea {
+      min-height: 96px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--green-500);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(67, 169, 104, .11);
+    }
+
+    .summary-panel {
+      height: fit-content;
+      position: sticky;
+      top: 105px;
+      overflow: hidden;
+    }
+
+    .summary-top {
+      min-height: 185px;
+      position: relative;
+      padding: 28px;
+      color: white;
+      background: var(--green-900);
+    }
+
+    .summary-top::before {
+      content: "";
+      width: 180px;
+      height: 180px;
+      position: absolute;
+      right: -70px;
+      bottom: -90px;
+      border: 1px solid rgba(166, 238, 40, .26);
+      border-radius: 50%;
+      box-shadow: 0 0 0 26px rgba(166, 238, 40, .035), 0 0 0 52px rgba(166, 238, 40, .025);
+    }
+
+    .summary-top small {
+      color: rgba(255, 255, 255, .57);
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+
+    .summary-date {
+      margin-top: 19px;
+      font-size: 1.42rem;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.03em;
+    }
+
+    .summary-time {
+      margin-top: 8px;
+      color: var(--lime);
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .summary-body { padding: 25px 28px 28px; }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: .88rem;
+    }
+
+    .summary-row span:first-child { color: var(--muted); }
+    .summary-row strong { text-align: right; }
+
+    .summary-total {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin: 21px 0;
+    }
+
+    .summary-total span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .summary-total strong {
+      color: var(--green-900);
+      font-size: 2.25rem;
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .booking-submit {
+      width: 100%;
+      min-height: 56px;
+      border: 0;
+    }
+
+    .booking-submit:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .payment-inline {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: .73rem;
+      text-align: center;
+    }
+
+    .payment-inline svg { color: var(--green-600); }
+
+    .privacy-note {
+      margin: 12px 0 0;
+      color: #89948d;
+      font-size: .68rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* FAQ */
+    .faq-section { padding: 130px 0; }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .faq-sticky { position: sticky; top: 120px; }
+
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item { border-bottom: 1px solid var(--line); }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 23px 0;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      font-size: 1rem;
+      font-weight: 780;
+      cursor: pointer;
+    }
+
+    .faq-plus {
+      width: 31px;
+      height: 31px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--green-700);
+      transition: transform .25s ease, background .25s ease;
+    }
+
+    .faq-item.is-open .faq-plus {
+      color: var(--green-950);
+      background: var(--lime);
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows .3s ease;
+    }
+
+    .faq-answer > div { overflow: hidden; }
+
+    .faq-answer p {
+      max-width: 700px;
+      margin: 0;
+      padding: 0 42px 22px 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .faq-item.is-open .faq-answer { grid-template-rows: 1fr; }
+
+    /* Footer */
+    .site-footer {
+      padding: 75px 0 28px;
+      color: white;
+      background: var(--green-950);
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 60px;
+      align-items: end;
+      padding-bottom: 54px;
+      border-bottom: 1px solid rgba(255, 255, 255, .10);
+    }
+
+    .footer-title {
+      max-width: 730px;
+      margin: 0;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+
+    .footer-title span {
+      color: var(--lime);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .footer-cta { justify-self: end; }
+
+    .footer-bottom {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 25px;
+      padding-top: 27px;
+      color: rgba(255, 255, 255, .5);
+      font-size: .76rem;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: white;
+      font-weight: 800;
+    }
+
+    .footer-brand img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    /* Success modal */
+    .modal-backdrop {
+      position: fixed;
+      z-index: 300;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      background: rgba(7, 37, 28, .72);
+      backdrop-filter: blur(8px);
+      transition: .25s ease;
+    }
+
+    .modal-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .success-modal {
+      width: min(100%, 520px);
+      padding: 34px;
+      border: 1px solid rgba(255, 255, 255, .5);
+      border-radius: 28px;
+      background: white;
+      box-shadow: 0 35px 90px rgba(0, 0, 0, .28);
+      transform: translateY(18px) scale(.97);
+      transition: transform .25s ease;
+    }
+
+    .modal-backdrop.is-open .success-modal { transform: none; }
+
+    .success-icon {
+      width: 64px;
+      height: 64px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 20px;
+      color: var(--green-950);
+      background: var(--lime);
+    }
+
+    .success-modal h3 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -.045em;
+    }
+
+    .success-modal > p {
+      margin: 13px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .confirmation-box {
+      margin-top: 21px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #f7f9f6;
+      font-size: .86rem;
+      line-height: 1.7;
+    }
+
+    .confirmation-box strong { color: var(--green-800); }
+
+    .modal-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .modal-actions .btn { min-height: 49px; }
+
+    .toast {
+      position: fixed;
+      z-index: 500;
+      left: 50%;
+      bottom: 24px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      color: white;
+      background: var(--green-900);
+      box-shadow: var(--shadow-lg);
+      font-size: .82rem;
+      font-weight: 750;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 15px);
+      transition: .25s ease;
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .75s ease, transform .75s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .navbar > .nav-cta { display: none; }
+      .menu-toggle { display: grid; position: relative; }
+
+      .nav-links.is-open {
+        display: flex;
+        position: fixed;
+        top: 96px;
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, .6);
+        border-radius: 24px;
+        background: rgba(255, 255, 255, .96);
+        box-shadow: var(--shadow-lg);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav-links.is-open a { padding: 14px; }
+      .nav-links.is-open .mobile-cta { display: inline-flex; margin-top: 6px; }
+
+      .hero-shell {
+        min-height: 790px;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-shell::before {
+        background: linear-gradient(0deg, rgba(7, 37, 28, 1) 0%, rgba(7, 37, 28, .93) 47%, rgba(7, 37, 28, .18) 77%, rgba(7, 37, 28, .04) 100%);
+      }
+
+      .hero-image { object-position: 62% top; }
+      .hero-copy { align-self: end; padding-top: 300px; }
+      .hero h1 { max-width: 800px; }
+      .hero-scroll { display: none; }
+      .price-badge { width: 116px; height: 116px; top: 100px; right: 24px; bottom: auto; }
+      .price-badge strong { font-size: 2rem; }
+
+      .trust-grid { grid-template-columns: repeat(2, 1fr); }
+      .method-grid { grid-template-columns: 1fr; }
+      .method-card { min-height: 250px; }
+      .method-card h3 { margin-top: 48px; }
+
+      .analysis-grid,
+      .offer-card,
+      .booking-layout,
+      .faq-layout,
+      .footer-top { grid-template-columns: 1fr; }
+
+      .analysis-photo { min-height: 520px; }
+      .analysis-floating { right: 18px; }
+      .summary-panel { position: static; }
+      .faq-sticky { position: static; }
+      .footer-cta { justify-self: start; }
+    }
+
+    @media (min-width: 981px) {
+      .mobile-cta { display: none; }
+    }
+
+    @media (max-width: 720px) {
+      .container { width: min(calc(100% - 24px), var(--container)); }
+      .site-header { top: 8px; }
+      .navbar { min-height: 64px; padding: 7px 8px 7px 12px; }
+      .brand-logo { width: 40px; height: 40px; }
+      .brand-copy span { display: none; }
+      .hero { padding: 82px 0 16px; }
+      .hero-shell { min-height: 760px; border-radius: 28px; }
+      .hero-copy { padding: 300px 24px 36px; }
+      .hero h1 { font-size: clamp(3.1rem, 15vw, 5rem); }
+      .hero-lead { margin-top: 20px; font-size: .98rem; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .hero-actions .btn { width: 100%; }
+      .hero-meta { gap: 12px; font-size: .77rem; }
+      .price-badge { width: 100px; height: 100px; top: 83px; right: 18px; }
+      .price-badge strong { font-size: 1.7rem; }
+      .price-badge small { font-size: .6rem; }
+
+      .trust-grid { grid-template-columns: 1fr; }
+      .video-section,
+      .analysis-section,
+      .faq-section { padding: 95px 0; }
+      .video-heading,
+      .booking-head { align-items: start; flex-direction: column; }
+      .video-note { max-width: none; }
+      .video-card { padding: 6px; border-radius: 24px; }
+      .video-card video { border-radius: 19px; }
+      .video-tag { top: 18px; left: 18px; }
+
+      .method-section,
+      .booking-section { padding: 90px 0; border-radius: 28px; }
+      .method-section .container { width: min(calc(100% - 32px), var(--container)); }
+      .method-card { padding: 24px; }
+      .analysis-photo { min-height: 470px; border-radius: 25px; }
+      .analysis-floating { width: calc(100% - 36px); right: 18px; bottom: 18px; }
+
+      .offer-section { padding-bottom: 95px; }
+      .offer-card { border-radius: 27px; }
+      .offer-copy, .offer-price { padding: 34px 25px; }
+      .offer-points { grid-template-columns: 1fr; }
+      .offer-amount { font-size: 5rem; }
+
+      .booking-panel { padding: 24px 18px; }
+      .booking-layout { gap: 12px; }
+      .slots-grid { grid-template-columns: repeat(3, 1fr); }
+      .form-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+
+      .footer-bottom { grid-template-columns: 1fr; text-align: center; }
+      .footer-brand, .footer-links { justify-content: center; }
+      .footer-links { flex-wrap: wrap; }
+      .modal-actions { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Navigation principale">
+        <a href="#accueil" class="brand" aria-label="Retour à l'accueil">
+          <img src="logo.png" alt="Logo du coaching tennis" class="brand-logo" />
+          <span class="brand-copy">
+            <strong>Coaching Tennis</strong>
+            <span>Cours individuels à Nîmes</span>
+          </span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <a href="#methode">La méthode</a>
+          <a href="#seance">La séance</a>
+          <a href="#tarif">Tarif</a>
+          <a href="#faq">Questions</a>
+          <a href="#reservation" class="btn btn-primary mobile-cta">Réserver un cours</a>
+        </div>
+
+        <a href="#reservation" class="btn btn-dark nav-cta">Réserver un cours</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="container">
+        <div class="hero-shell">
+          <img src="1.png" alt="Coach de tennis corrigeant le geste d'un joueur sur le court" class="hero-image" />
+          <div class="hero-copy">
+            <div class="hero-kicker"><i></i> Coaching individuel • Nîmes</div>
+            <h1>Un cours précis.<br />Un jeu qui <span>progresse.</span></h1>
+            <p class="hero-lead">Travail technique, placement, régularité et stratégie : chaque séance est construite autour de votre niveau et de vos objectifs, sans programme générique.</p>
+            <div class="hero-actions">
+              <a href="#reservation" class="btn btn-primary">
+                Choisir un créneau
+                <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </a>
+              <a href="#video" class="btn btn-ghost">Voir la présentation</a>
+            </div>
+            <div class="hero-meta">
+              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6" /></svg>Tous niveaux</span>
+              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>1 heure complète</span>
+              <span><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></svg>Paiement sur place</span>
+            </div>
+          </div>
+          <div class="price-badge" aria-label="Tarif : 60 euros l'heure"><strong>60€</strong><small>la séance</small></div>
+          <div class="hero-scroll">Découvrir</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Informations principales">
+      <div class="container trust-grid">
+        <div class="trust-item reveal">
+          <span class="trust-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 12h7a4 4 0 0 0 0-8H4M20 5v14" /></svg></span>
+          <span><strong>Sur le court</strong><span>Correction immédiate en situation réelle.</span></span>
+        </div>
+        <div class="trust-item reveal">
+          <span class="trust-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V9M10 19V5M16 19v-7M22 19V3" /></svg></span>
+          <span><strong>Progression ciblée</strong><span>Une priorité claire à chaque séance.</span></span>
+        </div>
+        <div class="trust-item reveal">
+          <span class="trust-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8" /></svg></span>
+          <span><strong>100 % individuel</strong><span>Le cours s'adapte à votre rythme.</span></span>
+        </div>
+        <div class="trust-item reveal">
+          <span class="trust-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h2" /></svg></span>
+          <span><strong>Carte acceptée</strong><span>Visa et Mastercard, directement sur place.</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section" id="video">
+      <div class="container">
+        <div class="video-heading reveal">
+          <div>
+            <p class="eyebrow">Présentation</p>
+            <h2 class="section-title">Comprendre l'approche en moins d'une minute.</h2>
+          </div>
+          <p class="video-note">Une méthode simple : observer, corriger le point qui bloque, puis répéter dans une situation de jeu concrète.</p>
+        </div>
+        <div class="video-card reveal">
+          <span class="video-tag"><i></i> La méthode en vidéo</span>
+          <video controls playsinline preload="metadata" poster="1.png">
+            <source src="vsl.mp4" type="video/mp4" />
+            Votre navigateur ne prend pas en charge la lecture vidéo.
+          </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="method-section" id="methode">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">La méthode</p>
+          <h2 class="section-title">Moins de gestes au hasard.<br />Plus de repères utiles.</h2>
+          <p class="section-subtitle">Le cours ne consiste pas à frapper davantage de balles. Il sert à comprendre ce qui limite votre jeu et à installer des corrections que vous pouvez reproduire seul.</p>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card reveal">
+            <div class="method-number"><span>Diagnostic</span><span>01</span></div>
+            <h3>Observer votre jeu réel</h3>
+            <p>Placement, préparation, timing, trajectoire et prise de décision sont analysés dès les premiers échanges.</p>
+            <i class="method-orbit"></i>
+          </article>
+          <article class="method-card reveal">
+            <div class="method-number"><span>Correction</span><span>02</span></div>
+            <h3>Isoler le point qui bloque</h3>
+            <p>Une consigne claire, un exercice adapté et un retour immédiat pour éviter de répéter la même erreur.</p>
+            <i class="method-orbit"></i>
+          </article>
+          <article class="method-card reveal">
+            <div class="method-number"><span>Application</span><span>03</span></div>
+            <h3>Transférer en situation</h3>
+            <p>La correction est replacée dans des échanges et des séquences proches d'un match afin de la rendre durable.</p>
+            <i class="method-orbit"></i>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="analysis-section" id="seance">
+      <div class="container analysis-grid">
+        <div class="analysis-visual reveal">
+          <img src="2.png" alt="Coach et joueuse de tennis analysant une séance sur une tablette" class="analysis-photo" />
+          <div class="analysis-floating">
+            <strong>Une priorité mesurable</strong>
+            <p>Chaque séance se termine avec un axe de travail précis et des repères simples à conserver.</p>
+            <div class="progress"><span></span></div>
+          </div>
+        </div>
+
+        <div class="analysis-copy reveal">
+          <p class="eyebrow">Une séance utile</p>
+          <h2 class="section-title">Tout est construit autour de votre besoin du moment.</h2>
+          <p class="section-subtitle">Débutant, joueur régulier ou compétiteur : le contenu change selon votre niveau, mais la logique reste la même — comprendre rapidement, pratiquer précisément, repartir avec une correction exploitable.</p>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4v16h16"/><path d="m7 15 4-4 3 3 5-7"/></svg></span>
+              <div><strong>Technique et régularité</strong><p>Décomposer le geste sans perdre la fluidité et obtenir une balle plus stable.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M21 12h-6"/></svg></span>
+              <div><strong>Placement et précision</strong><p>Mieux se positionner avant l'impact pour jouer plus juste avec moins d'effort.</p></div>
+            </div>
+            <div class="feature-item">
+              <span class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 20V10M12 20V4M18 20v-7"/><path d="M4 20h16"/></svg></span>
+              <div><strong>Service et stratégie</strong><p>Construire des schémas simples pour commencer le point avec une intention claire.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer-section" id="tarif">
+      <div class="container">
+        <div class="offer-card reveal">
+          <div class="offer-copy">
+            <p class="eyebrow">Une offre simple</p>
+            <h2>Une heure de coaching individuel, sans abonnement.</h2>
+            <p>Vous choisissez votre créneau. La séance est préparée selon votre niveau et votre objectif. Aucun paiement n'est demandé en ligne.</p>
+            <div class="offer-points">
+              <span class="offer-point"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>1 heure sur le court</span>
+              <span class="offer-point"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Programme personnalisé</span>
+              <span class="offer-point"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Débutant à confirmé</span>
+              <span class="offer-point"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Paiement après la séance</span>
+            </div>
+          </div>
+          <div class="offer-price">
+            <div>
+              <div class="offer-price-label">Tarif unique</div>
+              <div class="offer-amount">60€ <span>/ heure</span></div>
+              <p class="offer-payment-note">Paiement directement sur place par carte bancaire ou en espèces.</p>
+            </div>
+            <div class="payment-logos" aria-label="Moyens de paiement acceptés">
+              <span class="payment-logo">VISA</span>
+              <span class="payment-logo mastercard" aria-label="Mastercard">Mastercard</span>
+              <span class="payment-logo">Sans contact</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-section" id="reservation">
+      <div class="container">
+        <div class="booking-head reveal">
+          <div>
+            <p class="eyebrow">Réservation</p>
+            <h2 class="section-title">Choisissez votre prochain créneau.</h2>
+            <p class="section-subtitle">Sélectionnez une date, une heure et indiquez votre objectif principal. Aucun paiement en ligne.</p>
+          </div>
+          <div class="booking-assurance">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 4 7v5c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <span>Vos coordonnées sont uniquement utilisées pour préparer la séance et confirmer le créneau.</span>
+          </div>
+        </div>
+
+        <form class="booking-layout" id="bookingForm" novalidate>
+          <div class="booking-panel reveal">
+            <div class="booking-step">
+              <h3 class="step-title"><span>1</span> Choisir une date</h3>
+              <div class="date-scroller" id="dateScroller" aria-label="Dates disponibles"></div>
+            </div>
+
+            <div class="booking-step">
+              <h3 class="step-title"><span>2</span> Choisir une heure</h3>
+              <div class="slots-grid" id="slotsGrid" aria-label="Horaires disponibles"></div>
+            </div>
+
+            <div class="booking-step">
+              <h3 class="step-title"><span>3</span> Vos informations</h3>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Nom et prénom *</label>
+                  <input id="name" name="name" type="text" autocomplete="name" placeholder="Votre nom" required />
+                </div>
+                <div class="field">
+                  <label for="phone">Téléphone *</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="06 00 00 00 00" required />
+                </div>
+                <div class="field">
+                  <label for="email">E-mail</label>
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.fr" />
+                </div>
+                <div class="field">
+                  <label for="level">Votre niveau *</label>
+                  <select id="level" name="level" required>
+                    <option value="">Sélectionner</option>
+                    <option>Débutant</option>
+                    <option>Intermédiaire</option>
+                    <option>Confirmé</option>
+                    <option>Compétiteur</option>
+                  </select>
+                </div>
+                <div class="field full">
+                  <label for="goal">Objectif de la séance</label>
+                  <textarea id="goal" name="goal" placeholder="Ex. améliorer mon service, gagner en régularité, préparer un match…"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="summary-panel reveal" aria-label="Résumé de la réservation">
+            <div class="summary-top">
+              <small>Votre créneau</small>
+              <div class="summary-date" id="summaryDate">Sélectionnez une date</div>
+              <div class="summary-time" id="summaryTime">Puis un horaire</div>
+            </div>
+            <div class="summary-body">
+              <div class="summary-row"><span>Format</span><strong>Cours individuel</strong></div>
+              <div class="summary-row"><span>Durée</span><strong>1 heure</strong></div>
+              <div class="summary-row"><span>Lieu</span><strong>Nîmes</strong></div>
+              <div class="summary-row"><span>Paiement</span><strong>Sur place</strong></div>
+              <div class="summary-total"><span>Total à régler après le cours</span><strong>60€</strong></div>
+              <button class="btn btn-primary booking-submit" id="bookingSubmit" type="submit" disabled>
+                Confirmer ma demande
+                <svg class="icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+              </button>
+              <div class="payment-inline"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg> Visa et Mastercard acceptées sur place</div>
+              <p class="privacy-note">En confirmant, vous enregistrez une demande de créneau. Aucun débit et aucune donnée bancaire ne sont collectés sur ce site.</p>
+            </div>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-sticky reveal">
+          <p class="eyebrow">Questions fréquentes</p>
+          <h2 class="section-title">Avant de venir sur le court.</h2>
+          <p class="section-subtitle">Les informations essentielles pour préparer votre première séance.</p>
+        </div>
+
+        <div class="faq-list reveal">
+          <article class="faq-item is-open">
+            <button class="faq-question" type="button" aria-expanded="true">À qui s'adressent les cours ?<span class="faq-plus">+</span></button>
+            <div class="faq-answer"><div><p>Les séances sont adaptées aux adultes de tous niveaux : découverte, reprise après une pause, perfectionnement technique ou préparation à la compétition.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Que faut-il apporter ?<span class="faq-plus">+</span></button>
+            <div class="faq-answer"><div><p>Une tenue de sport adaptée, des chaussures de tennis, de l'eau et votre raquette. Les besoins particuliers peuvent être précisés dans le formulaire de réservation.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Comment se déroule la première séance ?<span class="faq-plus">+</span></button>
+            <div class="faq-answer"><div><p>La séance commence par quelques échanges pour observer votre jeu. Le travail se concentre ensuite sur une ou deux priorités, avec des exercices puis une mise en situation.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Le paiement se fait-il en ligne ?<span class="faq-plus">+</span></button>
+            <div class="faq-answer"><div><p>Non. Aucun paiement n'est demandé au moment de la réservation. Le règlement de 60 € s'effectue directement sur place, par carte Visa, Mastercard ou en espèces.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Que se passe-t-il en cas de pluie ?<span class="faq-plus">+</span></button>
+            <div class="faq-answer"><div><p>Si les conditions ne permettent pas de jouer correctement, le créneau est reporté. La décision est prise au plus près de la séance selon l'état du court et la météo.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <h2 class="footer-title">Votre prochain déclic peut commencer à la <span>prochaine séance.</span></h2>
+        <a href="#reservation" class="btn btn-primary footer-cta">Voir les créneaux</a>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-brand"><img src="logo.png" alt="" /> Coaching Tennis Nîmes</span>
+        <span>© <span id="currentYear"></span> — Tous droits réservés</span>
+        <span class="footer-links"><a href="#tarif">Tarif</a><a href="#reservation">Réserver</a><a href="#faq">FAQ</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+    <div class="success-modal">
+      <div class="success-icon"><svg width="31" height="31" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4L19 6" /></svg></div>
+      <h3 id="successTitle">Créneau enregistré.</h3>
+      <p>Votre récapitulatif est prêt. Vous pouvez l'ajouter à votre agenda et le conserver comme confirmation.</p>
+      <div class="confirmation-box" id="confirmationBox"></div>
+      <div class="modal-actions">
+        <button class="btn btn-dark" id="calendarButton" type="button">Ajouter à l'agenda</button>
+        <button class="btn btn-ghost" id="closeModal" type="button">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">Information copiée</div>
+
+  <script>
+    (() => {
+      const PRICE = 60;
+      const DURATION_MINUTES = 60;
+      const DAYS_TO_SHOW = 14;
+      const SLOT_TIMES = ["08:30", "10:00", "11:30", "14:00", "15:30", "17:00", "18:30", "20:00"];
+
+      const state = {
+        selectedDate: "",
+        selectedDateLabel: "",
+        selectedTime: "",
+        lastBooking: null
+      };
+
+      const $ = (selector, scope = document) => scope.querySelector(selector);
+      const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
+
+      const dateScroller = $("#dateScroller");
+      const slotsGrid = $("#slotsGrid");
+      const summaryDate = $("#summaryDate");
+      const summaryTime = $("#summaryTime");
+      const submitButton = $("#bookingSubmit");
+      const bookingForm = $("#bookingForm");
+      const successModal = $("#successModal");
+      const confirmationBox = $("#confirmationBox");
+      const toast = $("#toast");
+
+      function pad(value) {
+        return String(value).padStart(2, "0");
+      }
+
+      function toLocalISO(date) {
+        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+      }
+
+      function formatLongDate(date) {
+        return new Intl.DateTimeFormat("fr-FR", {
+          weekday: "long",
+          day: "numeric",
+          month: "long"
+        }).format(date);
+      }
+
+      function getStoredBookings() {
+        try {
+          return JSON.parse(localStorage.getItem("tennisBookings") || "[]");
+        } catch {
+          return [];
+        }
+      }
+
+      function saveBooking(booking) {
+        const bookings = getStoredBookings();
+        bookings.push(booking);
+        localStorage.setItem("tennisBookings", JSON.stringify(bookings));
+      }
+
+      function isBooked(date, time) {
+        return getStoredBookings().some(item => item.date === date && item.time === time);
+      }
+
+      function renderDates() {
+        const today = new Date();
+        today.setHours(12, 0, 0, 0);
+
+        for (let i = 1; i <= DAYS_TO_SHOW; i++) {
+          const date = new Date(today);
+          date.setDate(today.getDate() + i);
+
+          const iso = toLocalISO(date);
+          const weekday = new Intl.DateTimeFormat("fr-FR", { weekday: "short" }).format(date).replace(".", "");
+          const month = new Intl.DateTimeFormat("fr-FR", { month: "short" }).format(date).replace(".", "");
+
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "date-button";
+          button.dataset.date = iso;
+          button.dataset.label = formatLongDate(date);
+          button.setAttribute("aria-label", formatLongDate(date));
+          button.innerHTML = `<small>${weekday}</small><strong>${date.getDate()}</strong><em>${month}</em>`;
+          button.addEventListener("click", () => selectDate(button));
+          dateScroller.appendChild(button);
+        }
+      }
+
+      function selectDate(button) {
+        $$(".date-button", dateScroller).forEach(item => item.classList.remove("is-selected"));
+        button.classList.add("is-selected");
+        state.selectedDate = button.dataset.date;
+        state.selectedDateLabel = button.dataset.label;
+        state.selectedTime = "";
+        summaryDate.textContent = capitalize(state.selectedDateLabel);
+        summaryTime.textContent = "Choisissez un horaire";
+        renderSlots();
+        updateSubmitState();
+      }
+
+      function renderSlots() {
+        slotsGrid.innerHTML = "";
+        SLOT_TIMES.forEach(time => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "slot-button";
+          button.textContent = time;
+          button.dataset.time = time;
+          button.disabled = isBooked(state.selectedDate, time);
+          if (button.disabled) button.title = "Créneau déjà réservé sur cet appareil";
+          button.addEventListener("click", () => selectTime(button));
+          slotsGrid.appendChild(button);
+        });
+      }
+
+      function selectTime(button) {
+        if (button.disabled) return;
+        $$(".slot-button", slotsGrid).forEach(item => item.classList.remove("is-selected"));
+        button.classList.add("is-selected");
+        state.selectedTime = button.dataset.time;
+        summaryTime.textContent = `${state.selectedTime} — ${DURATION_MINUTES} minutes`;
+        updateSubmitState();
+      }
+
+      function updateSubmitState() {
+        const requiredFilled = state.selectedDate && state.selectedTime;
+        submitButton.disabled = !requiredFilled;
+      }
+
+      function capitalize(text) {
+        return text ? text.charAt(0).toUpperCase() + text.slice(1) : text;
+      }
+
+      function validPhone(value) {
+        return value.replace(/\D/g, "").length >= 10;
+      }
+
+      function showToast(message) {
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        clearTimeout(showToast.timer);
+        showToast.timer = setTimeout(() => toast.classList.remove("is-visible"), 2200);
+      }
+
+      function createReference() {
+        return `TN-${Date.now().toString(36).slice(-6).toUpperCase()}`;
+      }
+
+      function createBookingPayload() {
+        const formData = new FormData(bookingForm);
+        return {
+          reference: createReference(),
+          date: state.selectedDate,
+          dateLabel: state.selectedDateLabel,
+          time: state.selectedTime,
+          duration: DURATION_MINUTES,
+          price: PRICE,
+          name: String(formData.get("name") || "").trim(),
+          phone: String(formData.get("phone") || "").trim(),
+          email: String(formData.get("email") || "").trim(),
+          level: String(formData.get("level") || "").trim(),
+          goal: String(formData.get("goal") || "").trim(),
+          createdAt: new Date().toISOString()
+        };
+      }
+
+      function validateBooking(booking) {
+        const name = $("#name");
+        const phone = $("#phone");
+        const level = $("#level");
+        let firstInvalid = null;
+
+        [name, phone, level].forEach(field => field.removeAttribute("aria-invalid"));
+
+        if (!booking.name) {
+          name.setAttribute("aria-invalid", "true");
+          firstInvalid ||= name;
+        }
+        if (!validPhone(booking.phone)) {
+          phone.setAttribute("aria-invalid", "true");
+          firstInvalid ||= phone;
+        }
+        if (!booking.level) {
+          level.setAttribute("aria-invalid", "true");
+          firstInvalid ||= level;
+        }
+        if (!booking.date || !booking.time) {
+          showToast("Sélectionnez une date et un horaire");
+          return false;
+        }
+        if (firstInvalid) {
+          firstInvalid.focus();
+          showToast("Vérifiez les champs obligatoires");
+          return false;
+        }
+        return true;
+      }
+
+      function showConfirmation(booking) {
+        confirmationBox.innerHTML = `
+          <strong>Référence ${escapeHtml(booking.reference)}</strong><br>
+          ${escapeHtml(booking.name)}<br>
+          ${capitalize(escapeHtml(booking.dateLabel))} à ${escapeHtml(booking.time)}<br>
+          Cours individuel — 1 heure — ${booking.price} € sur place
+        `;
+        successModal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        successModal.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
+
+      function escapeHtml(value) {
+        const div = document.createElement("div");
+        div.textContent = String(value);
+        return div.innerHTML;
+      }
+
+      function generateICS(booking) {
+        const [year, month, day] = booking.date.split("-").map(Number);
+        const [hour, minute] = booking.time.split(":").map(Number);
+        const start = new Date(year, month - 1, day, hour, minute, 0);
+        const end = new Date(start.getTime() + booking.duration * 60000);
+
+        const formatICS = date =>
+          `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}T${pad(date.getHours())}${pad(date.getMinutes())}00`;
+
+        const details = [
+          "Cours de tennis individuel à Nîmes",
+          `Niveau : ${booking.level}`,
+          booking.goal ? `Objectif : ${booking.goal}` : "",
+          `Référence : ${booking.reference}`,
+          `Paiement sur place : ${booking.price} €`
+        ].filter(Boolean).join("\\n");
+
+        const ics = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//Coaching Tennis Nimes//FR",
+          "BEGIN:VEVENT",
+          `UID:${booking.reference}@coaching-tennis-nimes`,
+          `DTSTAMP:${formatICS(new Date())}`,
+          `DTSTART:${formatICS(start)}`,
+          `DTEND:${formatICS(end)}`,
+          "SUMMARY:Cours de tennis individuel",
+          "LOCATION:Nîmes",
+          `DESCRIPTION:${details.replace(/,/g, "\\,")}`,
+          "END:VEVENT",
+          "END:VCALENDAR"
+        ].join("\r\n");
+
+        const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `cours-tennis-${booking.date}-${booking.time.replace(":", "h")}.ics`;
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      bookingForm.addEventListener("submit", event => {
+        event.preventDefault();
+        const booking = createBookingPayload();
+        if (!validateBooking(booking)) return;
+
+        saveBooking(booking);
+        state.lastBooking = booking;
+        showConfirmation(booking);
+        renderSlots();
+      });
+
+      $("#calendarButton").addEventListener("click", () => {
+        if (state.lastBooking) generateICS(state.lastBooking);
+      });
+
+      $("#closeModal").addEventListener("click", closeModal);
+      successModal.addEventListener("click", event => {
+        if (event.target === successModal) closeModal();
+      });
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeModal();
+      });
+
+      // FAQ
+      $$(".faq-question").forEach(button => {
+        button.addEventListener("click", () => {
+          const item = button.closest(".faq-item");
+          const isOpen = item.classList.toggle("is-open");
+          button.setAttribute("aria-expanded", String(isOpen));
+        });
+      });
+
+      // Mobile menu
+      const menuToggle = $("#menuToggle");
+      const navLinks = $("#navLinks");
+      menuToggle.addEventListener("click", () => {
+        const open = navLinks.classList.toggle("is-open");
+        menuToggle.classList.toggle("is-active", open);
+        menuToggle.setAttribute("aria-expanded", String(open));
+        document.body.classList.toggle("menu-open", open);
+      });
+      $$("a", navLinks).forEach(link => link.addEventListener("click", () => {
+        navLinks.classList.remove("is-open");
+        menuToggle.classList.remove("is-active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      }));
+
+      // Reveal animation
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      $$(".reveal").forEach(item => revealObserver.observe(item));
+
+      // Video: pause when out of view
+      const video = $("video");
+      const videoObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting && !video.paused) video.pause();
+        });
+      }, { threshold: .1 });
+      if (video) videoObserver.observe(video);
+
+      renderDates();
+      $("#currentYear").textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
